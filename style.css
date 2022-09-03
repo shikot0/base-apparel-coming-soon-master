@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: .6fr .4fr;
+    grid-template-rows: .1fr 1fr; 
+}
+#logo-section {
+    width: 100%;
+    padding: 2% 0 0 11%;
+}
+#form-section {
+    grid-column-start: 1;
+    grid-column-end: 2; 
+    grid-row-start: 2;
+    grid-row-end: 3; 
+    width: 100%; 
+    padding: 0 28% 8% 11%;  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: flex-start;
+    background: url(images/bg-pattern-desktop.svg);
+    background-size: cover; 
+}
+#page-header{
+    font-size: 60px;   
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 18px; 
+    margin: 0 0 5% 0; 
+    color: hsl(0, 6%, 24%);
+}  
+#page-header span {
+    color: hsl(0, 36%, 70%);
+    font-weight: 300;
+}
+#page-info {
+    color: hsl(0, 36%, 70%);
+    line-height: 25px;   
+    margin: 0 0 5% 0;
+    font-size: 15px;
+}
+.email-div {
+    width: 100%;
+    position: relative;
+}
+.email-div::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 22%;
+    content: url(images/icon-error.svg);
+    visibility: hidden;
+}
+.email-div::after {
+    position: absolute;
+    bottom: -40%; 
+    left: 6%;
+    content: 'Please provide a valid email';
+    color: hsl(0, 93%, 68%); 
+    display: block;
+    font-size: 13px;  
+    visibility: hidden;
+}
+#invalid.email-div::after, #invalid.email-div::before{
+    visibility: visible;
+} 
+#invalid > .email { 
+    border: 2px solid hsl(0, 93%, 68%);
+}
+.email {
+    width: 100%;  
+    padding: 14px 25px;
+    border-radius: 100px; 
+    border: 1px solid hsl(0, 36%, 70%);
+}
+.email:focus {
+    outline: none;
+}
+.email::placeholder {
+    color: hsl(0, 36%, 70%);
+}
+#submit-btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0; 
+    right: -1%;  
+    height: 100%;  
+    width: 18%;   
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    filter: drop-shadow(0 13px 15px hsl(0, 80%, 86%));
+    transition: .2s;
+} 
+#submit-btn:active {
+    background: hsl(0, 80%, 86%);
+}
+#submit-btn:hover {
+    filter: drop-shadow(0 10px 20px hsl(0, 74%, 74%));
+    transform: scale(1.2);
+} 
+#image-section {
+    grid-column-start: 2;
+    grid-column-end: 3; 
+    grid-row-start: 1;
+    grid-row-end: 3; 
+    height: 100%;
+    width: 100%;
+    background: url(images/hero-desktop.jpg);
+    background-size: cover;    
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+@media screen and (max-width: 900px) { 
+    #logo-section {
+        padding: 5% 0 0 7%; 
+    }
+    #form-section {
+        padding: 0 10% 5% 7%; 
+    }
+    #page-header{
+        font-size: 50px;    
+        line-height: 50px;
+        letter-spacing: 16px; 
+        margin: 0 0 4% 0; 
+    } 
+    #page-info {
+        line-height: 20px;   
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 35vh 55vh; 
+    } 
+    #logo-section {
+        padding: 0 0 0 5%; 
+        display: flex;
+        align-items: center;
+    }
+    #form-section {
+        width: 100%;
+        padding: 10% 8%;
+        align-items: stretch; 
+        justify-content: center; 
+        text-align: center;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4; 
+        gap: 30px;
+    }
+    #page-header{
+        font-size: 35px;    
+        line-height: 35px; 
+        letter-spacing: 14px; 
+        margin: 0; 
+    } 
+    #page-info {
+        margin: 0;
+        line-height: 18px;   
+        font-size: 14px;
+    }
+    #image-section {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        background: url(images/hero-mobile.jpg);
+        background-size: cover;    
+        background-repeat: no-repeat;
+        background-position: center;
+    } 
+}
