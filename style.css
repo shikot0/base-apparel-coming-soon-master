@@ -12,7 +12,7 @@ main {
 }
 #logo-section {
     width: 100%;
-    padding: 2% 0 0 11%;
+    padding: 2% 0 0 15%;
 }
 #form-section {
     grid-column-start: 1;
@@ -131,7 +131,7 @@ main {
     #page-header{
         font-size: 50px;    
         line-height: 50px;
-        letter-spacing: 16px; 
+        letter-spacing: 16px;
         margin: 0 0 4% 0; 
     } 
     #page-info {
