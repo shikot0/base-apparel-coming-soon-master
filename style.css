@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Josefin Sans';
 }
 body {
     margin: 0;
@@ -52,9 +53,9 @@ main {
 }
 .email-div::before {
     position: absolute;
-    top: 50%;
+    top: 50%; 
     transform: translateY(-50%);
-    right: 22%;
+    right: 20%;
     content: url(images/icon-error.svg);
     visibility: hidden;
 }
